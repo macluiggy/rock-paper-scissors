@@ -4,9 +4,9 @@ import './scss/main.scss'
 const Main = () => {
 	return (
 		<main>
-			<div className='paper_hand hand'>ss</div>
-			<div className='scissors_hand hand'>ss</div>
-			<div className='rock_hand hand'>ss</div>
+			<button className='paper_hand hand'>ss</button>
+			<button className='scissors_hand hand'>ss</button>
+			<button className='rock_hand hand'>ss</button>
 		</main>
 		)
 }

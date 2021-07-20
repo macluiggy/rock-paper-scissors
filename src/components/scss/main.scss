@@ -4,24 +4,53 @@
 - Rock Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%)
 - Lizard Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
 - Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%)
-
+--header-outline: hsl(217, 16%, 45%);
 */
 @import 'mixins';
 
 main {
 	@include border(blue);
+	width: 50%;
+	margin: auto;
 	height: 300px;
 	display: grid;
+	grid-gap: 1em;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
 	color: white;
+	.hand {
+		border-radius: 10em;
+		width: 9em;
+		height: 9em;
+		margin: 0 auto;
+		position: relative;
+		border: solid 1em;
+		background-color: transparent;
+	}
+	.hand::before {
+		content: '';
+		background-color: red;
+		border: solid hsl(217, 16%, 45%) 1em;
+		border-radius: 50%;
+		position: absolute;
+		right: -14%;
+		bottom: -18px;
+		width: 7em;
+		height: 7em;
+		z-index: -1;
+		background-color: white;
+	}
 	.paper_hand {
-		@include border(red);
+		border-color: hsl(230, 89%, 62%);
+		@include box-shadow(0, 7px, 1px, hsl(230, 89%, 55%));
 	}
 	.scissors_hand {
-		@include border(yellow);
+		border-color: hsl(40, 84%, 53%);
+		@include box-shadow(0, 7px, 1px,  hsl(39, 89%, 39%));
 	}
 	.rock_hand {
-		text-align: center;
+		border-color: hsl(349, 71%, 52%);
+		@include box-shadow(0, 7px, 1px,  hsl(349, 70%, 36%));
+		position: relative;
+		left: 50%;
 	}
 }
