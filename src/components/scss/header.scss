@@ -1,0 +1,6 @@
+@import 'mixins';
+
+header {
+	@include border(red);
+	color: red;
+}
