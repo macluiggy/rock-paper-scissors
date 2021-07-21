@@ -74,7 +74,19 @@ main {
 		margin: 0 auto;
 		position: relative;
 		border: solid 1em transparent;
-		background-color: transparent;
+		background-color: gray;
+		animation-name: littleBig;
+		animation-duration: 1.3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes littleBig {
+		0% {
+			background-color: gray;
+		} 50% {
+			background-color: black;
+		} 100% {
+			background-color:gray ;
+		}
 	}
 	.winlose {
 		text-align: center;
@@ -93,6 +105,7 @@ main {
 			padding: 0.5em 2em;
 			color: hsl(217, 16%, 45%);
 			border-radius: 1em;
+			border: none;
 		}
 	}
 }

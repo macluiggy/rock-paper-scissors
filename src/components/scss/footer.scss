@@ -1,0 +1,53 @@
+/*
+--dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --header-outline: hsl(217, 16%, 45%);
+  - Scissors Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%)
+- Paper Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%)
+- Rock Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%)
+- Lizard Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
+- Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%)
+*/
+
+@import 'mixins';
+footer {
+	@include border(teal);
+	color: white;
+	position: relative;
+	top: 50px;
+	bottom: 50px;
+	width: 99vw;
+	.rules {
+		font-size: 1.5em;
+		width: 150px;
+		height: 40px;
+		background-color: transparent;
+		border: solid hsl(217, 16%, 45%);
+		border-radius: 0.4em;
+		color: hsl(217, 16%, 85%);
+	}
+	.rules_modal {
+		@include border(red);
+		z-index: 20;
+		position: fixed;
+		width: 99%;
+		height: 100%;
+		overflow: auto;
+		top: -15px;
+		left: -40px;
+		background-image: url('../images/image-rules.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: white;
+		align-items: center;
+		p {
+			color: black;
+			align-items: center;
+			vertical-align: middle;
+			font-size: 2em;
+			.close {
+				font-size: 1.5em;
+			}
+		}
+	}
+}

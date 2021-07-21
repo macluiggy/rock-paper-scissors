@@ -3,6 +3,7 @@ import { useState, useReducer, useEffect } from 'react';
 //components
 import Header from './components/Header';
 import Main from './components/Main';
+import Footer from './components/Footer';
 
 const initialState = {
   isLoading: false,
@@ -96,7 +97,9 @@ function App() {
        wait={wait}
        setWait={setWait}
        win={win}
+       getRamdomNumber={getRamdomNumber}
         />
+      <Footer />
     </div>
   );
 }

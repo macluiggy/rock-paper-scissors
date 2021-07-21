@@ -10,7 +10,8 @@ const Main = ({
 				change,
 				wait,
 				setWait,
-				win, }) => {
+				win,
+				getRamdomNumber, }) => {
 	
 	let userClass = hand === 'paper'
 		? 'paper_hand hand'
@@ -28,7 +29,7 @@ const Main = ({
 			setWait(true)
 			let interval = setInterval(() => {
 				setWait(false) 
-			}, 1000)
+			}, 1000*getRamdomNumber() + 500)
 
 			return () => clearInterval(interval);
 		}, [change])
