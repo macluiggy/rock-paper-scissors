@@ -42,15 +42,25 @@ main {
 	.paper_hand {
 		border-color: hsl(230, 89%, 62%);
 		@include box-shadow(0, 7px, 1px, hsl(230, 89%, 55%));
+		background-image: url('../images/icon-paper.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+
 	}
 	.scissors_hand {
 		border-color: hsl(40, 84%, 53%);
 		@include box-shadow(0, 7px, 1px,  hsl(39, 89%, 39%));
+		background-image: url('../images/icon-scissors.svg');
+		background-repeat: no-repeat;
+		background-position: center;
 	}
 	.rock_hand {
 		border-color: hsl(349, 71%, 52%);
 		@include box-shadow(0, 7px, 1px,  hsl(349, 70%, 36%));
 		position: relative;
 		left: 50%;
+		background-image: url('../images/icon-rock.svg');
+		background-repeat: no-repeat;
+		background-position: center;
 	}
 }
