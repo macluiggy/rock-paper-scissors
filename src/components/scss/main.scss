@@ -63,4 +63,8 @@ main {
 		background-repeat: no-repeat;
 		background-position: center;
 	}
+	.rock_hand2 {
+		@extend .rock_hand;
+		left: 0;
+	}
 }
