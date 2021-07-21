@@ -9,7 +9,7 @@
 @import 'mixins';
 
 main {
-	@include border(blue);
+	//@include border(blue);
 	width: 50%;
 	margin: auto;
 	height: 300px;
@@ -75,5 +75,24 @@ main {
 		position: relative;
 		border: solid 1em transparent;
 		background-color: transparent;
+	}
+	.winlose {
+		text-align: center;
+		margin: auto;
+		//@include border(red);
+		position: relative;
+		left: 50%;
+		p {
+			text-align: center;
+			margin: auto;
+			font-size: 3em;
+		}
+		button {
+			margin: auto;
+			font-size: 1.5em;
+			padding: 0.5em 2em;
+			color: hsl(217, 16%, 45%);
+			border-radius: 1em;
+		}
 	}
 }

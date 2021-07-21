@@ -1,7 +1,16 @@
 import React, {useEffect, useState } from 'react';
 import './scss/main.scss'
 
-const Main = ({selectAnOption, isLoading, hand, machineHand, reset, change, wait, setWait}) => {
+const Main = ({
+				selectAnOption,
+				isLoading,
+				hand,
+				machineHand,
+				reset,
+				change,
+				wait,
+				setWait,
+				win, }) => {
 	
 	let userClass = hand === 'paper'
 		? 'paper_hand hand'
@@ -19,7 +28,7 @@ const Main = ({selectAnOption, isLoading, hand, machineHand, reset, change, wait
 			setWait(true)
 			let interval = setInterval(() => {
 				setWait(false) 
-			}, 3000)
+			}, 1000)
 
 			return () => clearInterval(interval);
 		}, [change])
@@ -49,7 +58,10 @@ const Main = ({selectAnOption, isLoading, hand, machineHand, reset, change, wait
 					<>
 						<button id='1' className={userClass}></button>
 						<button id='2' className={machineClass}></button>
-						<button onClick={reset} >Play again</button>
+						<div className='winlose'>
+							<p>{win ? 'YOU WIN' : win === null ? 'IT\'S A DRAW' : 'YOU LOSE'}</p>
+							<button onClick={reset} >Play again</button>
+						</div>
 					</>
 					)}
 		</main>

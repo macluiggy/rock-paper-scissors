@@ -36,6 +36,7 @@ const reducer = (state, action) => {
 function App() {
   const [score, setScore] = useState(12);
   const [wait, setWait] = useState(false)
+  const [win, setWin] = useState(null)
   const [state, dispatch] = useReducer(reducer, initialState);
   const {hand, isLoading, change, machineHand} = state
 
@@ -58,19 +59,26 @@ function App() {
     
     console.log(machineHand === hand)
     if (machineHand === hand) {
+      setWin(null)
       return
     } else if ( hand === 'paper' && machineHand === 'scissors') {
       setScore(score => score - 1);
+      setWin(false)
     } else if (hand === 'paper' && machineHand === 'rock') {
       setScore(score => score + 1);
+      setWin(true)
     } else if (hand === 'rock' && machineHand === 'scissors') {
       setScore(score => score + 1);
+      setWin(true)
     } else if (hand === 'rock' && machineHand === 'paper') {
       setScore(score => score - 1);
+      setWin(false)
     } else if (hand === 'scissors' && machineHand === 'paper') {
       setScore(score => score + 1);
+      setWin(true)
     } else if (hand === 'scissors' && machineHand === 'rock') {
       setScore(score => score - 1);
+      setWin(false)
     }
   }, [change])
 
@@ -87,6 +95,7 @@ function App() {
        change={change}
        wait={wait}
        setWait={setWait}
+       win={win}
         />
     </div>
   );
