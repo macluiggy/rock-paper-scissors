@@ -2,16 +2,16 @@ import { useState } from 'react';
 import './scss/footer.scss';
 
 const Footer = () => {
-	const [display, setDisplay] = useState('none')
+	const [display, setDisplay] = useState('rules_modal')
 	return (
 		<footer>
 			<button
 			 className='rules'
-			 onClick={() => setDisplay('block')} >Rules</button>
-			<figure className='rules_modal' style={{display: display}}>
+			 onClick={() => setDisplay('rules_modal_show')} >Rules</button>
+			<figure className={display} >
 				<p>RULES <span
 				 className="close" 
-				 onClick={() => setDisplay('none')} >&times;</span></p>
+				 onClick={() => setDisplay('rules_modal')} >&times;</span></p>
 			</figure>
 		</footer>
 		)

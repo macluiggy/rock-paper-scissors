@@ -35,7 +35,7 @@ const reducer = (state, action) => {
 }
 
 function App() {
-  const [score, setScore] = useState(12);
+  const [score, setScore] = useState(0);
   const [wait, setWait] = useState(false)
   const [win, setWin] = useState(null)
   const [state, dispatch] = useReducer(reducer, initialState);
