@@ -1,7 +1,8 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState } from 'react';
 import './scss/main.scss'
 
-const Main = ({selectAnOption, isLoading, hand, machineHand, reset}) => {
+const Main = ({selectAnOption, isLoading, hand, machineHand, reset, change}) => {
+	const [wait, setWait] = useState(false)
 	let userClass = hand === 'paper'
 		? 'paper_hand hand'
 		: hand === 'scissors'
@@ -14,6 +15,14 @@ const Main = ({selectAnOption, isLoading, hand, machineHand, reset}) => {
 		? 'scissors_hand hand'
 		: 'rock_hand2 hand'
 
+		useEffect(() => {
+			setWait(true)
+			let interval = setInterval(() => {
+				setWait(false) 
+			}, 3000)
+
+			return () => clearInterval(interval);
+		}, [change])
 		//console.log(machineHand + 'dddd')
 	return (
 		<main>
@@ -24,6 +33,9 @@ const Main = ({selectAnOption, isLoading, hand, machineHand, reset}) => {
 						<button id='1' className='scissors_hand hand' onClick={selectAnOption}></button>
 						<button id='2' className='rock_hand hand' onClick={selectAnOption}></button>
 					</>
+					) 
+				: wait ? (
+					<button id='1' className={userClass}></button>
 					) : (
 					<>
 						<button id='1' className={userClass}></button>

@@ -83,6 +83,7 @@ function App() {
        hand={hand}
        machineHand={machineHand}
        reset={reset}
+       change={change}
         />
     </div>
   );
