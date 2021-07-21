@@ -1,8 +1,8 @@
 import React, {useEffect, useState } from 'react';
 import './scss/main.scss'
 
-const Main = ({selectAnOption, isLoading, hand, machineHand, reset, change}) => {
-	const [wait, setWait] = useState(false)
+const Main = ({selectAnOption, isLoading, hand, machineHand, reset, change, wait, setWait}) => {
+	
 	let userClass = hand === 'paper'
 		? 'paper_hand hand'
 		: hand === 'scissors'
@@ -35,7 +35,16 @@ const Main = ({selectAnOption, isLoading, hand, machineHand, reset, change}) => 
 					</>
 					) 
 				: wait ? (
-					<button id='1' className={userClass}></button>
+					<>
+						<div>
+							<button id='1' className={userClass}></button>
+							<p>You picked</p>
+						</div>
+						<div>
+							<button id='1' className='house_picked'></button>
+							<p>The house picked</p>
+						</div>
+					</>
 					) : (
 					<>
 						<button id='1' className={userClass}></button>

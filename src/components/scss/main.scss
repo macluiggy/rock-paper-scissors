@@ -67,4 +67,13 @@ main {
 		@extend .rock_hand;
 		left: 0;
 	}
+	.house_picked {
+		border-radius: 10em;
+		width: 9em;
+		height: 9em;
+		margin: 0 auto;
+		position: relative;
+		border: solid 1em transparent;
+		background-color: transparent;
+	}
 }

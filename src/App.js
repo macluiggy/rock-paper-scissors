@@ -35,6 +35,7 @@ const reducer = (state, action) => {
 
 function App() {
   const [score, setScore] = useState(12);
+  const [wait, setWait] = useState(false)
   const [state, dispatch] = useReducer(reducer, initialState);
   const {hand, isLoading, change, machineHand} = state
 
@@ -75,7 +76,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header score={score} />
+      <Header score={score} wait={wait} />
       <Main
        selectAnOption={selectAnOption}
        isLoading={isLoading}
@@ -84,6 +85,8 @@ function App() {
        machineHand={machineHand}
        reset={reset}
        change={change}
+       wait={wait}
+       setWait={setWait}
         />
     </div>
   );
