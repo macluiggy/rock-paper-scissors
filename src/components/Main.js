@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react';
+import React, { useEffect }from 'react';
 import './scss/main.scss'
 
 const Main = ({
@@ -32,7 +32,7 @@ const Main = ({
 			}, 1000*getRamdomNumber() + 500)
 
 			return () => clearInterval(interval);
-		}, [change])
+		}, [change, getRamdomNumber, setWait])
 		//console.log(machineHand + 'dddd')
 	return (
 		<main>
@@ -60,7 +60,7 @@ const Main = ({
 						<button id='1' className={userClass}></button>
 						<button id='2' className={machineClass}></button>
 						<div className='winlose'>
-							<p>{win ? 'YOU WIN' : win === null ? 'IT\'S A DRAW' : 'YOU LOSE'}</p>
+							<p>{win ?'YOU WIN': win === null ?'IT\'S A DRAW' :'YOU LOSE'}</p>
 							<button onClick={reset} >Play again</button>
 						</div>
 					</>

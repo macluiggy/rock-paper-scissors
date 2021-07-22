@@ -81,7 +81,7 @@ function App() {
       setScore(score => score - 1);
       setWin(false)
     }
-  }, [change])
+  }, [change, hand, machineHand])
 
   return (
     <div className="App">
