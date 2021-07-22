@@ -26,6 +26,7 @@ main {
 		position: relative;
 		border: solid 1em;
 		background-color: transparent;
+		cursor: pointer;
 	}
 	.hand::before {
 		content: '';
@@ -102,11 +103,13 @@ main {
 		}
 		button {
 			margin: auto;
-			font-size: 1.5em;
-			padding: 0.5em 2em;
+			font-size: 1.2em;
+			padding: 0.5em 3.5em;
 			color: hsl(217, 16%, 45%);
-			border-radius: 1em;
+			border-radius: 0.4em;
 			border: none;
+			margin-top: 0.5em;
+			cursor: pointer;
 		}
 	}
 }

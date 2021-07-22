@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './scss/footer.scss';
 
 const Footer = () => {
-	const [display, setDisplay] = useState('rules_modal')
+	const [display, setDisplay] = useState('rules_modal');
 	return (
 		<footer>
 			<button

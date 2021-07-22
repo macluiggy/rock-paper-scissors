@@ -13,6 +13,7 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	padding: 1em;
+	border-radius: 0.4em;
 	.logo_container {
 		//@include border(white);
 		margin: 0;
@@ -22,7 +23,7 @@ header {
 	}
 	.score_container {
 		@include border(white);
-		width: 18vw;
+		width: 7em;
 		border-radius: 0.5em;
 		background-color: white;
 		p {
@@ -55,5 +56,10 @@ header {
 				}
 			}
 		}
+	}
+}
+@media screen and (min-width: 900px) {
+	header {
+		width: 40vw;
 	}
 }
