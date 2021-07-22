@@ -61,15 +61,6 @@ Using the concepts of react, I made this rock, paper, scissors game what I could
  - useReducer
 - Using JavaScript Object destructuring when passing the props
 - Showing and hide react elements depending in the state (true/false)
-
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
 ## Author
 
 - Frontend Mentor - [@macluiggy](https://www.frontendmentor.io/profile/macluiggy)
