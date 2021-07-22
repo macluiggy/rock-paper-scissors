@@ -79,12 +79,5 @@ footer {
 				justify-content: space-around;
 			}
 		}
-		.modal_container {
-			background-color: rgba(0,0,0,0.4);
-			z-index: 34444;
-			@include border(red);
-			height: 100vh;
-			position:fixed;
-		}
 	}
 }
