@@ -57,8 +57,14 @@ const Main = ({
 					</>
 					) : (
 					<>
-						<button id='1' className={userClass}></button>
-						<button id='2' className={machineClass}></button>
+						<div>
+							<button id='1' className={userClass}></button>
+							<p>You picked</p>
+						</div>
+						<div>
+							<button id='1' className={machineClass}></button>
+							<p>The house picked</p>
+						</div>
 						<div className='winlose'>
 							<p>{win ?'YOU WIN': win === null ?'IT\'S A DRAW' :'YOU LOSE'}</p>
 							<button onClick={reset} >Play again</button>
