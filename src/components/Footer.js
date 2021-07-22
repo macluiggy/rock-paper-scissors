@@ -8,11 +8,13 @@ const Footer = () => {
 			<button
 			 className='rules'
 			 onClick={() => setDisplay('rules_modal_show')} >Rules</button>
-			<figure className={display} >
+			<div className='modal_container'>
+				<figure className={display} >
 				<p>RULES <span
 				 className="close" 
 				 onClick={() => setDisplay('rules_modal')} >&times;</span></p>
 			</figure>
+			</div>
 		</footer>
 		)
 }

@@ -10,6 +10,7 @@
 
 main {
 	//@include border(blue);
+	$circleWidth: 9em;
 	width: 50%;
 	margin: auto;
 	height: 300px;
@@ -19,8 +20,8 @@ main {
 	color: white;
 	.hand {
 		border-radius: 10em;
-		width: 9em;
-		height: 9em;
+		width: $circleWidth;
+		height: $circleWidth;
 		margin: 0 auto;
 		position: relative;
 		border: solid 1em;
@@ -69,8 +70,8 @@ main {
 	}
 	.house_picked {
 		border-radius: 10em;
-		width: 9em;
-		height: 9em;
+		width: $circleWidth;
+		height: $circleWidth;
 		margin: 0 auto;
 		position: relative;
 		border: solid 1em transparent;
@@ -106,6 +107,30 @@ main {
 			color: hsl(217, 16%, 45%);
 			border-radius: 1em;
 			border: none;
+		}
+	}
+}
+
+@media screen and (min-width: 900px) {
+	main {
+		$circleWidth: 12em;
+		.hand {
+			height: $circleWidth;
+			width: $circleWidth;
+			background-size: 60.000%;
+		}
+		.hand::before {
+			content: '';
+			right: -10%;
+			bottom: -18px;
+			width: $circleWidth - 2;
+			height: $circleWidth - 2;
+			z-index: -1;
+			background-color: white;
+		}
+		.house_picked {
+			width: $circleWidth;
+			height: $circleWidth;
 		}
 	}
 }

@@ -15,7 +15,7 @@ body {
   min-width: 375px;
   background: radial-gradient(hsl(214, 47%, 25%), hsl(237, 49%, 15%));
   background-repeat: no-repeat;
-  background-size: 100vw 100vh;
+  background-size: 100% 150%;
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
