@@ -13,17 +13,29 @@ const Main = ({
 				win,
 				getRamdomNumber, }) => {
 	
-	let userClass = hand === 'paper'
+	/*let userClass = hand === 'paper'
 		? 'paper_hand hand'
 		: hand === 'scissors'
 		? 'scissors_hand hand'
-		: 'rock_hand2 hand'
+		: 'rock_hand2 hand'*/
 
-	let machineClass = machineHand === 'paper'
+	let userClass = {
+		paper: 'paper_hand hand',
+		scissors: 'scissors_hand hand',
+		rock: 'rock_hand2 hand',
+	}[hand]
+
+	/*let machineClass = machineHand === 'paper'
 		? 'paper_hand hand'
 		: machineHand === 'scissors'
 		? 'scissors_hand hand'
-		: 'rock_hand2 hand'
+		: 'rock_hand2 hand'*/
+
+	let machineClass = {
+		'paper': 'paper_hand hand',
+		'scissors': 'scissors_hand hand',
+		'rock': 'rock_hand2 hand',
+	}[machineHand]
 
 		useEffect(() => {
 			setWait(true)

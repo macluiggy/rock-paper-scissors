@@ -11,7 +11,7 @@ const initialState = {
 }
 
 const options = ['paper', 'scissors', 'rock'];
-function getRamdomNumber() { return Math.floor(Math.random() * 3)}
+function getRamdomNumber() { return Math.floor(Math.random() * 3) }
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -33,15 +33,24 @@ const reducer = (state, action) => {
 
   }
 }
+const useScore = () => {
+  const [score, setScore] = useState(
+      localStorage.getItem('score') || 0
+    );
 
+  useEffect(() => {
+   localStorage.setItem('score', score)
+  }, [score])
+  return [parseInt(score), setScore]
+}
 function App() {
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useScore()
   const [wait, setWait] = useState(false)
   const [win, setWin] = useState(null)
   const [state, dispatch] = useReducer(reducer, initialState);
   const {hand, isLoading, change, machineHand} = state
 
-
+  const resetScore = () => setScore(0)
 
   const selectAnOption = e => {
     console.log(e.target.id)
@@ -56,9 +65,10 @@ function App() {
       type: 'RESET',
     })
   }
+  
   useEffect(() => {
-    
-    console.log(machineHand === hand)
+    //console.log(machineHand === hand)
+    console.log(`rendered`)
     if (machineHand === hand) {
       setWin(null)
       return
@@ -81,7 +91,7 @@ function App() {
       setScore(score => score - 1);
       setWin(false)
     }
-  }, [change, hand, machineHand])
+  }, [change, hand, machineHand, setScore])
 
   return (
     <div className="App">
@@ -99,7 +109,7 @@ function App() {
        win={win}
        getRamdomNumber={getRamdomNumber}
         />
-      <Footer />
+      <Footer resetScore={resetScore} />
     </div>
   );
 }
